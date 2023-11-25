@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class OrderStatusSeeder extends Seeder
+class DeliveryStatusSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,14 +14,15 @@ class OrderStatusSeeder extends Seeder
     public function run(): void
     {
         $statuses = [
-            'New',
+            'Pending',
             'Processing',
-            'Paid',
-            'Ready for Shipment',
+            'Shipped',
+            'Delivered',
+            'Cancelled',
         ];
 
         foreach($statuses as $status){
-            DB::table('order_statuses')->insert(['name' => $status]);
+            DB::table('delivery_statuses')->insert(['name' => $status]);
         }
     }
 }

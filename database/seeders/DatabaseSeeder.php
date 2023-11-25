@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Delivery;
 use App\Models\Order;
 use App\Models\OrderItem;
-use App\Models\OrderStatus;
 use App\Models\Product;
 use App\Models\User;
 
@@ -25,9 +25,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             OrderStatusSeeder::class,
+            DeliveryTypeSeeder::class,
+            DeliveryStatusSeeder::class,
         ]);
 
         Order::factory(5)->create();
         OrderItem::factory(5)->create();
+        Delivery::factory(5)->create();
     }
 }
