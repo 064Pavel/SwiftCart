@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\OrderStatus;
 use App\Models\Product;
 use App\Models\User;
 
@@ -21,9 +22,8 @@ class DatabaseSeeder extends Seeder
         Product::factory(50)->create();
 
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            OrderStatusSeeder::class,
+        ]);
     }
 }
