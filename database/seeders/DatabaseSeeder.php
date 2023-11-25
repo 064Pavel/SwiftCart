@@ -8,6 +8,7 @@ use App\Models\Delivery;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 
 use Illuminate\Database\Seeder;
@@ -27,10 +28,12 @@ class DatabaseSeeder extends Seeder
             OrderStatusSeeder::class,
             DeliveryTypeSeeder::class,
             DeliveryStatusSeeder::class,
+            RaitingSeeder::class,
         ]);
 
         Order::factory(5)->create();
         OrderItem::factory(5)->create();
         Delivery::factory(5)->create();
+        Review::factory(20)->create();
     }
 }
