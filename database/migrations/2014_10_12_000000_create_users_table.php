@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('address', 255);
             $table->string('phone_number')->index();
+            $table->unsignedDecimal("balance", 8, 2)->default(0.00);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
